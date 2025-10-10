@@ -181,7 +181,6 @@ export default function Home() {
             </CardContent>
           </Card>
 
-
         </div>
       </main>
 
