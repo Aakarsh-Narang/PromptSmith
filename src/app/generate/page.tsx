@@ -7,7 +7,6 @@ import { CodeDisplay } from "@/components/display/CodeDisplay";
 import { ExamplePrompts } from "@/components/content/ExamplePrompts";
 import { Card, CardContent } from "@/components/ui/card";
 import { regenerateCodeWithPrompt, type GenerateCodeFormState } from '@/app/actions';
-// GemForge_lite/src/app/actions/generateCodeAction.ts
 import { generateCampedUICode, type GenerateCampedUICodeInput } 
   from '../../ai/flows/generate-camped-ui-code';
 
@@ -170,6 +169,7 @@ export default function Home() {
           </Card>
 
           {/* Generated Code */}
+          {/* Generated Code */}
           <Card className="shadow-2xl border border-gray-200 hover:scale-[1.02] transition-transform duration-300 flex flex-col">
             <CardContent className="p-8 flex flex-col h-full">
               <CodeDisplay 
@@ -180,6 +180,7 @@ export default function Home() {
               />
             </CardContent>
           </Card>
+
 
         </div>
       </main>
