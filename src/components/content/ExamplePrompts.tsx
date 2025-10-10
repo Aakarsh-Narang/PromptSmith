@@ -18,7 +18,7 @@ const examplePromptsList = [
    {
     id: "3",
     title: "Weather App",
-    description: "Create a simple weather app that shows current temperature and forecast for a city."
+    description: "Create a simple weather app that shows current temperature and forecast for the city."
   },
   {
     id: "4",
