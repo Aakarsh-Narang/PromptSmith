@@ -162,7 +162,7 @@ export default function Home() {
               </div>
 
               <div className="mt-6">
-                <h3 className="font-semibold text-lg text-indigo-700 mb-3">Example Prompts</h3>
+                {/* <h3 className="font-semibold text-lg text-indigo-700 mb-3">Example Prompts</h3> */}
                 <ExamplePrompts onPromptSelect={handlePromptSelect} />
               </div>
             </CardContent>
