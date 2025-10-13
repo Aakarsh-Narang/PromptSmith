@@ -33,7 +33,13 @@ PromptSmith seamlessly integrates **Google AI** and modern web development tools
 
 ---
 
-## 💻 Tech Stack
+## 💻 Tech Stack:
+
+### Frontend
+- **Framework**: Next.js 14 with App Router  
+- **Language**: TypeScript for type safety  
+- **Styling**: Tailwind CSS + ShadCN/UI components  
+- **State Management**: React hooks and Context API  
 
 ### Frontend
 - **Framework**: Next.js 14 with App Router  
@@ -52,7 +58,10 @@ PromptSmith seamlessly integrates **Google AI** and modern web development tools
 - **Build Tool**: Next.js bundler  
 - **Deployment**: Vercel + Firebase Hosting  
 
----
+### Development & Deployment
+- **Package Manager**: npm / yarn  
+- **Build Tool**: Next.js bundler  
+- **Deployment**: Vercel + Firebase Hosting  
 
 ## 🚀 Use Cases
 
