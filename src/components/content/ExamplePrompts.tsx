@@ -7,21 +7,26 @@ import { Lightbulb } from "lucide-react";
 const examplePromptsList = [
   {
     id: "1",
-    title: "Login Form",
-    description: "Create a responsive login form with animated input fields, a submit button with hover effects, and error validation messages."
-  },
+    title: "GitHub Repository Fetcher",
+    description: "Build a simple web app that takes a GitHub repository URL as input and displays its files and content as readable text. The app should show the repo name, file list, and let users click files to view their code. Use a clean, minimal UI."
+    },
   {
     id: "2",
-    title: "User Profile Card",
-    description: "A card component displaying a user profile. It should have a circular avatar (placeholder image 100x100 pixels), the name 'Alex Doe', job title 'Lead Designer', and a short bio: 'Passionate about creating intuitive and beautiful user experiences.'"
-  },
-  {
-    id: "3",
     title: "Calculator App",
     description: "Make a calculator web app for basic arithmetic operations with a clean layout and responsive buttons."
   },
-  {
+   {
     id: "3",
+    title: "Weather App",
+    description: "Create a simple weather app that shows current temperature and forecast for the city."
+  },
+  {
+    id: "4",
+    title: "Login Form",
+    description: "Create a responsive login form with animated input fields, a submit button with hover effects, and error validation messages.It should have a circular avatar (placeholder image 100x100 pixels)"
+  },
+  {
+    id: "5",
     title: "Simple Navigation Bar",
     description: "A simple navigation bar. It should have a logo text 'CampEdUI' on the left. On the right, include three navigation links: 'Home', 'Features', and 'Pricing'."
   },
