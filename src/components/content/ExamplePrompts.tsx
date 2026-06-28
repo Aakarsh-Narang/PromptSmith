@@ -17,8 +17,8 @@ const examplePromptsList = [
   },
    {
     id: "3",
-    title: "Weather App",
-    description: "Create a simple weather app that shows current temperature and forecast for the city."
+    title: "E-Commerce Card",
+    description: "Create a premium e-commerce product card for a pair of running shoes. Include a large product image placeholder, a title, price, and a size selector. Add a color picker with three distinct colors—when a user clicks a color, the main image placeholder's background color should smoothly transition to match it. Add an animated 'Add to Cart' button with a hover effect."
   },
   {
     id: "4",

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Tabs,
   TabsContent,
@@ -39,16 +38,35 @@ export function CodeDisplay({
   const { toast } = useToast();
   const [iframeKey, setIframeKey] = useState(0);
 
+  // --- NEW: Cleaning function to fix the single-line issue ---
+  const cleanAndFormatCode = (rawCode: string | null) => {
+    if (!rawCode) return "";
+    return rawCode
+      // Remove markdown blocks if the AI sneaks them in
+      .replace(/^```[\w]*\n?/gm, '')
+      .replace(/```$/gm, '')
+      // Convert literal string "\n" into actual line breaks
+      .replace(/\\n/g, '\n')
+      // Convert literal string "\t" into spaces for indentation
+      .replace(/\\t/g, '  ')
+      // Clean up escaped quotes if the JSON stringified them
+      .replace(/\\"/g, '"')
+      .trim();
+  };
+  
+  // Use this cleaned variable for the UI instead of the raw generatedCode
+  const displayCode = cleanAndFormatCode(generatedCode);
+
   const handleCopy = () => {
-    if (generatedCode) {
+    if (displayCode) {
       navigator.clipboard
-        .writeText(generatedCode)
+        .writeText(displayCode)
         .then(() => {
           setCopied(true);
           toast({
             title: "Code Copied!",
             description:
-              "The generated HTML/CSS has been copied to your clipboard.",
+              "The generated code has been copied to your clipboard.",
           });
           setTimeout(() => setCopied(false), 2000);
         })
@@ -65,8 +83,8 @@ export function CodeDisplay({
   };
 
   const handleDownload = () => {
-    if (generatedCode) {
-      const blob = new Blob([generatedCode], { type: "text/html" });
+    if (displayCode) {
+      const blob = new Blob([displayCode], { type: "text/html" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -87,7 +105,7 @@ export function CodeDisplay({
     setIframeKey((prev) => prev + 1);
   }, [generatedCode]);
 
-  const iframeSrcDoc = generatedCode
+  const iframeSrcDoc = displayCode
     ? `
     <!DOCTYPE html>
     <html>
@@ -100,7 +118,7 @@ export function CodeDisplay({
       </style>
     </head>
     <body>
-      ${generatedCode}
+      ${displayCode}
     </body>
     </html>
   `
@@ -174,10 +192,10 @@ export function CodeDisplay({
                 <p className="mt-4 text-lg">Generating your code...</p>
                 <p className="text-sm">Please wait a moment.</p>
               </div>
-            ) : generatedCode ? (
+            ) : displayCode ? (
               <div className="overflow-x-auto">
                 <SyntaxHighlighter
-                  language="htmlbars"
+                  language="tsx" // Changed to tsx for better React/HTML syntax coloring
                   style={atomDark}
                   customStyle={{
                     background: "transparent",
@@ -185,14 +203,14 @@ export function CodeDisplay({
                     margin: "0",
                     fontSize: "0.875rem",
                     overflowX: "auto",
-                    whiteSpace: "pre",
+                    whiteSpace: "pre-wrap", // Forces the code to respect line breaks!
                     display: "block",
                     minWidth: "100%",
                   }}
                   showLineNumbers={false}
                   wrapLongLines={false}
                 >
-                  {generatedCode}
+                  {displayCode}
                 </SyntaxHighlighter>
               </div>
             ) : (
@@ -217,7 +235,7 @@ export function CodeDisplay({
               <Eye className="w-12 h-12 animate-pulse text-primary" />
               <p className="mt-4 text-lg">Loading preview...</p>
             </div>
-          ) : generatedCode ? (
+          ) : displayCode ? (
             <iframe
               key={iframeKey}
               srcDoc={iframeSrcDoc}
