@@ -48,7 +48,7 @@ PromptSmith seamlessly integrates **Google AI** and modern web development tools
 - **State Management**: React hooks and Context API  
 
 ### Backend & AI
-- **AI Model**: Google Gemini 2.0  
+- **AI Model**: Google Gemini 3.5  
 - **AI Framework**: Firebase Genkit  
 - **Database**: Firebase Firestore  
 - **Authentication**: Firebase Auth  
