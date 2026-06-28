@@ -51,7 +51,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold mb-2">About the Creator</h2>
               <p className="text-base leading-relaxed text-muted-foreground mb-4">
                 Hi, I’m <strong>Aakarsh Narang</strong>, a passionate developer and builder, currently pursuing a <strong>B.Tech in IT (2027)</strong> at <strong>IIIT Gwalior</strong>. This project is a result of my exploration into generative AI, developer tooling, and the Google ecosystem. 
-                I believe in making technology more accessible, and GemForge is one step in that direction.
+                I believe in making technology more accessible, and PromptSmith is one step in that direction.
               </p>
 
               <div className="mt-6">
@@ -85,7 +85,7 @@ export default function AboutPage() {
             <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
               <Image
                 src="/me.jpg" // Replace with actual path
-                alt="Anukrati Chaturvedi"
+                alt="Aakarsh Narang"
                 width={400}
                 height={400}
                 className="object-cover w-full h-full"
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </main>
 
       <footer className="py-4 text-center text-sm text-muted-foreground border-t border-border">
-        © {new Date().getFullYear()} GemForge. Powered by Google Gemini, built by Anukrati.
+        © {new Date().getFullYear()} PromptSmith. Built by Aakarsh.
       </footer>
     </div>
   );

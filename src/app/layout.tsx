@@ -33,7 +33,7 @@
 // }
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
-import "./globals.css";
+import "@/app/globals.css";
 
 import { Inter } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
@@ -44,9 +44,9 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-headl
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "GemForge - Gemini AI Code Generator",
+  title: "PromptSmith - AI Code Generator",
   description:
-    "Generate HTML/CSS from text prompts using AI, styled with Tailwind and ShadCN UI principles.",
+    "Generate HTML/CSS/React from text prompts using AI, styled with Tailwind.",
 };
 
 export default function RootLayout({
