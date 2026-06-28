@@ -29,7 +29,7 @@ Return only the code block.
 `;
 
 const result = await ai.generate({
-    model: "googleai/gemini-1.5-flash",
+    model: 'googleai/gemini-3.5-flash',
     prompt: prompt
   });
   
